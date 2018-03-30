@@ -10,8 +10,7 @@
     },
     "rules": {
         "comma-dangle": [
-            "error",
-            "never"
+            "error", "never"
         ],
         "no-unused-vars": [
             "error",
@@ -20,7 +19,17 @@
                "args": "none" 
             }
         ],
-        "react/jsx-filename-extension": 0
+        "react/jsx-filename-extension": 0,
+        "arrow-body-style": [
+            "error", "as-needed"
+        ],
+        "arrow-parens": [
+            "error", "always"
+        ],
+        "prefer-destructuring": [
+            "error", 
+            {"object": false, "array": false}
+        ]
     }
     
 }
