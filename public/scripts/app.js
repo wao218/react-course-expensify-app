@@ -1,27 +1,41 @@
 'use strict';
 
-// function square(x) {
-//   return x * x;
-// }
+// arguments object - no longer bound with arrow functions
 
-// console.log(square(3));
+var add = function add(a, b) {
+  // console.log(arguments);
+  return a + b;
+};
+console.log(add(55, 1, 1001));
 
-// // const squareArrow = (x) => {
-// //   return x * x;
-// // };
+// this keyword - no longer bound
 
-// const squareArrow = (x) => x * x;
+var user = {
+  name: 'Andrew',
+  cities: ['Philidelphia', 'New York', 'Dublin'],
+  printPlacesLived: function printPlacesLived() {
+    var _this = this;
 
-// console.log(squareArrow(4));
-
-// const getFirstName = (fullName) => {
-//   if (fullName) {
-//     return fullName.split(' ')[0];
-//   }
-// };
-
-var getFirstName = function getFirstName(fullName) {
-  return fullName.split(' ')[0];
+    return this.cities.map(function (city) {
+      return _this.name + ' has lived in ' + city;
+    });
+  }
 };
 
-console.log(getFirstName('Andrew Mead'));
+console.log(user.printPlacesLived());
+
+// Challenge area
+
+var mutliplier = {
+  numbers: [1, 2, 3],
+  multiplyBy: 2,
+  multiply: function multiply() {
+    var _this2 = this;
+
+    return this.numbers.map(function (number) {
+      return _this2.multiplyBy * number;
+    });
+  }
+};
+
+console.log(mutliplier.multiply());
