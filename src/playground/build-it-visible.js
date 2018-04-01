@@ -12,7 +12,7 @@ const toggleVisibility = () => {
 };
 
 const render = () => {
-  
+
   const template = (
     <div>
       <h1>{app.title}</h1>
