@@ -12,7 +12,8 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/
     }]
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'
 };
 
 // loader -> how a file gets transformed when webpack uses it, like babel and scss to jsx and css
