@@ -1,6 +1,6 @@
 // Expenses Reducer
 
-const expensesReducerDefaultState = []; 
+const expensesReducerDefaultState = [];
 
 export default (state = expensesReducerDefaultState, action) => {
   switch (action.type) {
@@ -18,9 +18,8 @@ export default (state = expensesReducerDefaultState, action) => {
             ...expense,
             ...action.updates
           };
-        } else {
-          return expense;
         }
+        return expense;
       });
     default:
       return state;
