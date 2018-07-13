@@ -13,5 +13,5 @@ test('should generate greeting from name', () => {
 
 test('should generate greeting for no name', () => {
   const result = generateGreeting();
-  expect(result).toBe('Hello Anonymous!')
+  expect(result).toBe('Hello Anonymous!');
 });

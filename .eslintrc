@@ -1,35 +1,27 @@
 {
-    "extends": "airbnb",
-    "parserOptions" : {
-        "ecmaVersion": 6
-    },
-    "env": {
-        "node": true,
-        "browser": true,
-        "es6": true
-    },
-    "rules": {
-        "comma-dangle": [
-            "error", "never"
-        ],
-        "no-unused-vars": [
-            "error",
-            {
-               "vars": "local",
-               "args": "none" 
-            }
-        ],
-        "react/jsx-filename-extension": 0,
-        "arrow-body-style": [
-            "error", "as-needed"
-        ],
-        "arrow-parens": [
-            "error", "always"
-        ],
-        "prefer-destructuring": [
-            "error", 
-            {"object": false, "array": false}
-        ]
-    }
-    
+  "extends": ["airbnb", "plugin:jest/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "local",
+        "args": "none"
+      }
+    ],
+    "react/jsx-filename-extension": 0,
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "always"],
+    "prefer-destructuring": ["error", { "object": false, "array": false }]
+  },
+  "plugins": ["jest"]
 }
