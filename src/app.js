@@ -12,7 +12,7 @@ import './styles/styles.scss';
 
 
 const store = configureStore();
-// Testing github
+
 const jsx = (
   <Provider store={store}>
     <AppRouter />
