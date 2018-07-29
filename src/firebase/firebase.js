@@ -11,6 +11,23 @@ const config = {
 
 firebase.initializeApp(config);
 
-firebase.database().ref().set({
-  name: 'Wesley Osborne'
+const database = firebase.database();
+
+database.ref().set({
+  name: 'Wesley Osborne',
+  age: 26,
+  isSingle: false,
+  location: {
+    city: 'Philidelphia',
+    country: 'United States'
+  }
+});
+
+// database.ref().set('This is my data.');
+
+database.ref('age').set(27);
+database.ref('location/city').set('Bethlehem');
+database.ref('attributes').set({
+  height: 60,
+  weight: 188
 });
