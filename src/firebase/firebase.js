@@ -31,3 +31,4 @@ database.ref('attributes').set({
   height: 60,
   weight: 188
 });
+console.log('I made a request to change the data.');
