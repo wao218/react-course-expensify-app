@@ -21,14 +21,22 @@ database.ref().set({
     city: 'Philidelphia',
     country: 'United States'
   }
+}).then(() => {
+  console.log('Data is saved!');
+}).catch((e) => {
+  console.log('This failed.', e);
 });
 
 // database.ref().set('This is my data.');
 
-database.ref('age').set(27);
-database.ref('location/city').set('Bethlehem');
+// database.ref('age').set(27);
+// database.ref('location/city').set('Bethlehem');
+
 database.ref('attributes').set({
   height: 60,
   weight: 188
+}).then(() => {
+  console.log('Data is saved.');
+}).catch((e) => {
+  console.log('There was an issue.', e);
 });
-console.log('I made a request to change the data.');
