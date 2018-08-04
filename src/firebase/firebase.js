@@ -13,10 +13,39 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company}.`);
+
+database.ref('expenses').push({
+  description: 'First expense',
+  note: '',
+  amount: '1000',
+  createdAt: 12334
 });
+
+database.ref('expenses').push({
+  description: 'Second expense',
+  note: '',
+  amount: '153450',
+  createdAt: 134235345
+});
+
+database.ref('expenses').push({
+  description: 'Third expense',
+  note: '',
+  amount: '34556',
+  createdAt: 6757467
+});
+
+// database.ref('notes/-LJ4eWbsY6dALErCW7IR').remove();
+
+// database.ref('notes').push({
+//   title: 'Course Topics',
+//   body: 'React Native, Angular, Python'
+// });
+
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}.`);
+// });
 
 // const onValueChange = database.ref().on('value', (snapshot) => {
 //   console.log(snapshot.val())
