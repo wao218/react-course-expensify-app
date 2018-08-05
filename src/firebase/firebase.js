@@ -1,38 +1,63 @@
 import * as firebase from 'firebase';
 
 const config = {
-  apiKey: "AIzaSyC_xs98EBtNguUsfiuIxjVZuvyk7Z-ToSw",
-  authDomain: "expensify-f58e6.firebaseapp.com",
-  databaseURL: "https://expensify-f58e6.firebaseio.com",
-  projectId: "expensify-f58e6",
-  storageBucket: "expensify-f58e6.appspot.com",
-  messagingSenderId: "702487841918"
+  apiKey: 'AIzaSyC_xs98EBtNguUsfiuIxjVZuvyk7Z-ToSw',
+  authDomain: 'expensify-f58e6.firebaseapp.com',
+  databaseURL: 'https://expensify-f58e6.firebaseio.com',
+  projectId: 'expensify-f58e6',
+  storageBucket: 'expensify-f58e6.appspot.com',
+  messagingSenderId: '702487841918'
 };
 
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
+database.ref('expenses').on('child_added', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+database.ref('expenses').on('child_changed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+database.ref('expenses').on('child_removed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+// database.ref('expenses').on('value', (snapshot) => {
+//   const expenses = [];
+
+//   snapshot.forEach((childSnapshot) => {
+//     expenses.push({
+//       id: childSnapshot.key,
+//       ...childSnapshot.val()
+//     });
+//   });
+
+//   console.log(expenses);
+// });
+
+// database.ref('expenses')
+//   .once('value')
+//   .then((snapshot) => {
+//     const expenses = [];
+
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+
+//     console.log(expenses);
+//   });
 
 database.ref('expenses').push({
-  description: 'First expense',
+  description: 'Movies',
   note: '',
   amount: '1000',
   createdAt: 12334
-});
-
-database.ref('expenses').push({
-  description: 'Second expense',
-  note: '',
-  amount: '153450',
-  createdAt: 134235345
-});
-
-database.ref('expenses').push({
-  description: 'Third expense',
-  note: '',
-  amount: '34556',
-  createdAt: 6757467
 });
 
 // database.ref('notes/-LJ4eWbsY6dALErCW7IR').remove();
