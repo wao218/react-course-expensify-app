@@ -10,6 +10,7 @@ import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import './styles/styles.scss';
 import './firebase/firebase';
+import './playground/promises';
 
 const store = configureStore();
 
